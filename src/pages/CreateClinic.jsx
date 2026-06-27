@@ -34,7 +34,7 @@ export default function CreateClinic() {
   const [form, setForm] = useState({
     clinic_name: '', clinic_address: '', clinic_phone: '',
     clinic_latitude: '', clinic_longitude: '',
-    admin_full_name: '', admin_email: '', admin_phone: '', admin_password: '',
+    admin_full_name: '', admin_username: '', admin_email: '', admin_phone: '', admin_password: '',
   })
 
   const update = (field, value) => setForm((prev) => ({ ...prev, [field]: value }))
@@ -118,8 +118,12 @@ export default function CreateClinic() {
                 <InputField label="To'liq ism" icon={User} type="text" placeholder="Ism Familiya"
                   value={form.admin_full_name} onChange={(e) => update('admin_full_name', e.target.value)} required />
               </div>
+              <div className="md:col-span-2">
+                <InputField label="Username" icon={User} type="text" placeholder="operator_username"
+                  value={form.admin_username} onChange={(e) => update('admin_username', e.target.value)} required />
+              </div>
               <InputField label="Email manzil" icon={Mail} type="email" placeholder="email@example.com"
-                value={form.admin_email} onChange={(e) => update('admin_email', e.target.value)} required />
+                value={form.admin_email} onChange={(e) => update('admin_email', e.target.value)} />
               <InputField label="Telefon raqami" icon={Phone} type="tel" placeholder="+998901234567"
                 value={form.admin_phone} onChange={(e) => update('admin_phone', e.target.value)} />
               <div className="md:col-span-2">
